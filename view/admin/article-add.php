@@ -3,7 +3,7 @@ require APP . '/model/DB.php';
 require APP . '/model/Article.php';
 ?>
 
-<div class="container">
+<div class="container" style="margin-left: 30rem; margin-top: 10rem">
     <h1>Ajouter un article</h1>
     <form action="<?= APP_HTTP ?>/?index.php&action=article-add" method="POST">
         <label for="title" class="form-control">Titre</label>

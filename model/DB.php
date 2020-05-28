@@ -8,8 +8,8 @@ class DB
      */
     private static $hostname = "localhost";
     private static $dbname = 'site';
-    private static $username = 'root';
-    private static $password = "";
+    private static $username = 'pumba';
+    private static $password = "Romain181079";
     // Static db instance.
     private static $db = null;
 

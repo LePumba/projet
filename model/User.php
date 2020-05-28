@@ -195,7 +195,7 @@ class User
             return true;
 
         $request = $db->prepare("SELECT id FROM users WHERE username=?");
-        $request->bind_param('ss', $this->username, $this->email);
+        $request->bind_param('s', $this->username);
         $userId = null;
 
         if($request->execute() && $request->bind_result($userId)) {

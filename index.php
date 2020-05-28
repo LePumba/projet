@@ -25,7 +25,7 @@ else {
             if(isset($_GET['id'])) {
                 require APP . '/model/DB.php';
                 require APP . '/model/Article.php';
-                $articleId = intval($_GET['id']);
+                $articleId = intval($_GET['id']); //TODO: explication de intval?
 
                 // Loading selected article.
                 $article = new Article();
@@ -34,16 +34,18 @@ else {
                 require 'view/article.php';
             }
             break;
-        case 'comment':
+        case 'comment': //TODO: commentaire vide!
             if(isset($_GET['article']) && isset($_GET['user']) && isset($_POST['commentaire'])) {
-                require  APP . '/model/DB.php';
-                require  APP . '/model/Comment.php';
-                $comment = new Comment();
-                $comment->setUser(intval($_GET['user']))
+                if(!empty($_POST['commentaire'])) {
+                    require APP . '/model/DB.php';
+                    require APP . '/model/Comment.php';
+                    $comment = new Comment();
+                    $comment->setUser(intval($_GET['user']))
                         ->setArticleId(intval($_GET['article']))
                         ->setTextContent($_POST['commentaire']);
-                $comment->insert(DB::getDbLink());
-                header('Location: ' . APP_HTTP . '/?action=article&id=' . intval($_GET['article']));
+                    $comment->insert(DB::getDbLink());
+                    header('Location: ' . APP_HTTP . '/?action=article&id=' . intval($_GET['article']));
+                }
             }
             break;
 

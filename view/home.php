@@ -109,9 +109,9 @@ if($request->execute() && $request->bind_result($id, $title, $content, $user)) {
         <div class="row">
             <div class="col-md-10 col-lg-8 mx-auto text-center">
                 <i class="far fa-paper-plane fa-2x mb-2 text-white"></i>
-                <h2 class="text-white mb-5">Abonnez-vous!</h2>
+                <h2 class="text-white mb-5">Contact</h2>
                 
-                <form class="form-inline d-flex">
+                <form class="form-inline d-flex ">
                     <input class="form-control flex-fill mr-0 mr-sm-2 mb-3 mb-sm-0" id="inputPseudo" type="text" placeholder="Entrez votre pseudo" />
                     <input class="form-control flex-fill mr-0 mr-sm-2 mb-3 mb-sm-0" id="inputEmail" type="email" placeholder="Entrez votre adresse e-mail..." />
                     <textarea name="contact" id="" cols="30" rows="10"></textarea>
