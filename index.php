@@ -44,9 +44,10 @@ else {
                         ->setArticleId(intval($_GET['article']))
                         ->setTextContent($_POST['commentaire']);
                     $comment->insert(DB::getDbLink());
-                    header('Location: ' . APP_HTTP . '/?action=article&id=' . intval($_GET['article']));
+
                 }
             }
+            header('Location: ' . APP_HTTP . '/?action=article&id=' . intval($_GET['article']));
             break;
 
         case 'article-add':
